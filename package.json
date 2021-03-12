@@ -1,20 +1,19 @@
 {
-  "name": "j-rg-lauenroth",
+  "name": "joerg",
   "version": "1.0.0",
   "private": true,
   "description": "Jörg Lauenroth",
   "author": "Jörg",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/comfortaa": "^4.2.2",
+    "@fontsource/fira-code": "^4.2.2",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.0.1",
     "gatsby-plugin-styled-components": "^4.0.0",
