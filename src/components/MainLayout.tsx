@@ -11,6 +11,8 @@ const GlobalStyle = createGlobalStyle`
     --color-secondary: #a8dadc;
     --color-ternary: #457b9d;
     --color-highlight: #e63946;
+
+    --max-width: 1200px;
   }
 
   * {
@@ -63,13 +65,13 @@ const MainLayout: React.FC = ({ children }) => (
       </h1>
       <ul>
         <li>
-          <Link to="/about">about</Link>
+          <Link to="/about/">about</Link>
         </li>
         <li>
-          <Link to="/projects">projects</Link>
+          <Link to="/projects/">projects</Link>
         </li>
         <li>
-          <Link to="/uses">uses</Link>
+          <Link to="/uses/">uses</Link>
         </li>
       </ul>
     </MainNavigation>
@@ -81,6 +83,9 @@ const MainNavigation = styled.nav`
   align-items: center;
   display: flex;
   height: 120px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: var(--max-width);
   padding: 0 60px;
 
   h1 {
@@ -118,19 +123,28 @@ const MainNavigation = styled.nav`
   }
 
   ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
-    grid-column-gap: 3rem;
+    display: flex;
+    /* grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); */
+    /* grid-column-gap: 3rem; */
     margin: 0;
     padding: 0;
-    width: 100%;
   }
+
   li {
     list-style: none;
 
     a {
       color: var(--color-text);
+      display: block;
+      margin-left: 3rem;
+      opacity: 0.8;
       text-decoration: none;
+      transition: 0.25s;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
     }
   }
 
@@ -143,7 +157,7 @@ const MainWrapper = styled.main`
   > section {
     margin: 0 auto;
     padding: 100px 60px;
-    max-width: 1000px;
+    max-width: var(--max-width);
   }
 
   .delete {
