@@ -3,12 +3,15 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import MainLayout from "../components/MainLayout";
 import jörgImage from "../images/jorg.webp";
+import Helmet from "react-helmet";
 
 // markup
 const IndexPage: React.FC = () => {
   return (
     <MainLayout>
-      <title>Jörg Lauenroth</title>
+      <Helmet>
+        <title>jörg.dev</title>
+      </Helmet>
       <Hello>
         <picture>
           <img src={jörgImage} width="360" height="360" alt="Jörg Lauenroth" />
@@ -25,6 +28,7 @@ const IndexPage: React.FC = () => {
           <p>
             I'm a freelancing full-stack web developer based in Berlin, Germany.
           </p>
+          <p></p>
           <p>
             You can find more about me on my <Link to="/about">about page</Link>
           </p>

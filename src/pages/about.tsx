@@ -1,8 +1,12 @@
 import React from "react";
+import Helmet from "react-helmet";
 import MainLayout from "../components/MainLayout";
 
 const AboutPage: React.FC = () => (
   <MainLayout>
+    <Helmet>
+      <title>jörg.dev | about</title>
+    </Helmet>
     <section>
       <h2>I'm a ...</h2>
       <h2>

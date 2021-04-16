@@ -138,12 +138,39 @@ const MainNavigation = styled.nav`
       display: block;
       margin-left: 3rem;
       opacity: 0.8;
+      position: relative;
       text-decoration: none;
       transition: 0.25s;
+
+      &::before {
+        bottom: 0;
+        left: -7px;
+        content: "<";
+        opacity: 0;
+        position: absolute;
+        transition: 0.25s;
+      }
+      &::after {
+        bottom: 0;
+        content: ">";
+        opacity: 0;
+        position: absolute;
+        right: -7px;
+        transition: 0.25s;
+      }
 
       &:hover,
       &:focus {
         opacity: 1;
+
+        &::before {
+          left: -14px;
+          opacity: 1;
+        }
+        &::after {
+          right: -14px;
+          opacity: 1;
+        }
       }
     }
   }
