@@ -65,7 +65,7 @@ const MainLayout: React.FC = ({ children }) => (
       </h1>
       <ul>
         <li>
-          <Link to="/aboutt">about</Link>
+          <Link to="/about">about</Link>
         </li>
         <li>
           <Link to="/projects">projects</Link>
@@ -241,12 +241,13 @@ const MainFooter = styled.footer`
 
   > section {
     max-width: var(--max-width);
+    margin: 0 auto;
     padding: 30px 60px;
 
     &:last-child {
       background-color: #222;
       font-size: 0.8rem;
-      padding: 15px 60px;
+      padding: 15px 560px;
       text-align: center;
 
       a {
