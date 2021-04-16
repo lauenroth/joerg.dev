@@ -65,17 +65,42 @@ const MainLayout: React.FC = ({ children }) => (
       </h1>
       <ul>
         <li>
-          <Link to="/about/">about</Link>
+          <Link to="/aboutt">about</Link>
         </li>
         <li>
-          <Link to="/projects/">projects</Link>
+          <Link to="/projects">projects</Link>
         </li>
         <li>
-          <Link to="/uses/">uses</Link>
+          <Link to="/music">music</Link>
+        </li>
+        <li>
+          <Link to="/cooking">cooking</Link>
+        </li>
+        <li>
+          <Link to="/uses">uses</Link>
         </li>
       </ul>
     </MainNavigation>
     <MainWrapper>{children}</MainWrapper>
+    <MainFooter>
+      <section>
+        <h3>
+          <a href="https://www.instagram.com/lauenroth/">Instagram</a>
+        </h3>
+        <Gallery>
+          <img src="https://scontent-frt3-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/132090331_402509710994049_8952866939266705046_n.jpg?tp=1&_nc_ht=scontent-frt3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=gU0lOQSyaAQAX-wGUqD&edm=AABBvjUAAAAA&ccb=7-4&oh=8fbc371152d9bca61aca3a11013450e2&oe=609E5AAE&_nc_sid=83d603" />
+          <img src="https://scontent-frt3-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/13398744_1745194305762525_1495246471_n.jpg?tp=1&_nc_ht=scontent-frt3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=dic9LmtVT5gAX_GeK1j&edm=AP_V10EAAAAA&ccb=7-4&oh=1d59f32b5c538a016e3d281d1777d031&oe=609F469A&_nc_sid=4f375e" />
+          <img src="https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/e35/84705540_194664208560143_5603665843698671134_n.jpg?tp=1&_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=111&_nc_ohc=_EPjgciJwtMAX_WNcJ1&edm=AP_V10EAAAAA&ccb=7-4&oh=49de395e7d6ca971ebddc5c6f02b34a1&oe=60A03CF7&_nc_sid=4f375e" />
+          <img src="https://scontent-frx5-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/13423067_465821903611313_178480076_n.jpg?tp=1&_nc_ht=scontent-frx5-1.cdninstagram.com&_nc_cat=105&_nc_ohc=znD_DbIzTo4AX_uLa08&edm=AP_V10EAAAAA&ccb=7-4&oh=1666c05d4c47df9693ec0f0e89ba531d&oe=60A08CE7&_nc_sid=4f375e" />
+          <img src="https://scontent-frt3-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/83103497_121441269229394_161422819949146411_n.jpg?tp=1&_nc_ht=scontent-frt3-1.cdninstagram.com&_nc_cat=102&_nc_ohc=l-0wYmTkIIgAX-lT5aZ&tn=69tHmlsoDHvWPaT0&edm=AP_V10EAAAAA&ccb=7-4&oh=82d325164a961647b6162958421c26c7&oe=60A01DB3&_nc_sid=4f375e" />
+          <img src="https://scontent-frt3-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s750x750/66071288_127663805169304_835903907610460472_n.jpg?tp=1&_nc_ht=scontent-frt3-1.cdninstagram.com&_nc_cat=104&_nc_ohc=1jU3TL6N1OkAX_Kmzt3&edm=AABBvjUAAAAA&ccb=7-4&oh=2e1eac12e722e2bb03147593aa537d8d&oe=60A0CDBB&_nc_sid=83d603" />
+        </Gallery>
+      </section>
+      <section>
+        <Link to="/impressum">Impressum</Link>
+        <Link to="/datenschutz">Datenschutz</Link>
+      </section>
+    </MainFooter>
   </>
 );
 
@@ -181,6 +206,8 @@ const MainNavigation = styled.nav`
 `;
 
 const MainWrapper = styled.main`
+  min-height: 80vh;
+
   > section {
     margin: 0 auto;
     padding: 100px 60px;
@@ -197,6 +224,80 @@ const MainWrapper = styled.main`
       padding: 50px 20px;
     }
   }
+`;
+
+const MainFooter = styled.footer`
+  background-color: var(--color-background);
+  margin-top: auto;
+
+  h3 a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  > section {
+    max-width: var(--max-width);
+    padding: 30px 60px;
+
+    &:last-child {
+      background-color: #222;
+      font-size: 0.8rem;
+      padding: 15px 60px;
+      text-align: center;
+
+      a {
+        text-decoration: none;
+
+        &::before {
+          content: "<";
+          margin-right: 5px;
+          opacity: 0;
+          position: relative;
+          right: -5px;
+          transition: 0.25s;
+        }
+
+        &::after {
+          content: ">";
+          margin-left: 5px;
+          opacity: 0;
+          position: relative;
+          left: -5px;
+          transition: 0.25s;
+        }
+
+        &:hover,
+        &:focus {
+          &::before {
+            opacity: 1;
+            right: 0;
+          }
+          &::after {
+            opacity: 1;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  img {
+    border-radius: 6px;
+    height: 120px;
+    margin-right: 20px;
+  }
+`;
+
+const Gallery = styled.div`
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: auto;
+  padding: 20px 0 20px 20px;
+  white-space: nowrap;
 `;
 
 export default MainLayout;

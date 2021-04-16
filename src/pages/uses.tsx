@@ -7,7 +7,7 @@ import SetupImage from "../images/setup.webp";
 const UsesPage: React.FC = () => (
   <MainLayout>
     <Helmet>
-      <title>jörg.dev | uses</title>
+      <title>Jörg.dev | uses</title>
     </Helmet>
     <Wrapper>
       <h2>My setup</h2>

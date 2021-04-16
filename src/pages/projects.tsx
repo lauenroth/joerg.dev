@@ -5,7 +5,7 @@ import MainLayout from "../components/MainLayout";
 const ProjectsPage: React.FC = () => (
   <MainLayout>
     <Helmet>
-      <title>jörg.dev | projects</title>
+      <title>Jörg.dev | projects</title>
     </Helmet>
     <section>
       <h1>My Projects</h1>

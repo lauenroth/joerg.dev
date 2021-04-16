@@ -10,7 +10,7 @@ const IndexPage: React.FC = () => {
   return (
     <MainLayout>
       <Helmet>
-        <title>jörg.dev</title>
+        <title>Jörg.dev</title>
       </Helmet>
       <Hello>
         <picture>
