@@ -28,7 +28,12 @@ const IndexPage: React.FC = () => {
           <p>
             I'm a freelancing full-stack web developer based in Berlin, Germany.
           </p>
-          <p></p>
+          <p>
+            Currently, my main job position is front-end tech lead at{" "}
+            <a href="https://www.worldia.com">Worldia</a>, a platform for
+            tailor-made travelling. But I'm always involved in plenty of other
+            projects as well.
+          </p>
           <p>
             You can find more about me on my <Link to="/about">about page</Link>
           </p>
