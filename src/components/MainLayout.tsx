@@ -63,6 +63,12 @@ const MainLayout: React.FC = ({ children }) => (
       <h1>
         <Link to="/">jörg.dev</Link>
       </h1>
+
+      <input type="checkbox" id="overlay-input" />
+      <label htmlFor="overlay-input" id="overlay-button">
+        <span></span>
+      </label>
+
       <ul>
         <li>
           <Link to="/about">about</Link>
@@ -70,12 +76,12 @@ const MainLayout: React.FC = ({ children }) => (
         <li>
           <Link to="/projects">projects</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/music">music</Link>
         </li>
         <li>
           <Link to="/cooking">cooking</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/uses">uses</Link>
         </li>
@@ -85,7 +91,7 @@ const MainLayout: React.FC = ({ children }) => (
     <MainFooter>
       <section>
         <div>
-          <h3>Let's connect</h3>
+          <h2>Let's connect</h2>
           <ul>
             <li>
               <a href="https://github.com/lauenroth">
@@ -175,6 +181,27 @@ const MainNavigation = styled.nav`
   max-width: var(--max-width);
   padding: 0 60px;
 
+  #overlay-button,
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked ~ #overlay-button {
+    &:hover span,
+    span {
+      background: transparent;
+    }
+    span {
+      &:before {
+        transform: rotate(45deg) translate(7px, 7px);
+        opacity: 1;
+      }
+      &:after {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    }
+  }
+
   h1 {
     align-items: center;
     display: flex;
@@ -262,8 +289,93 @@ const MainNavigation = styled.nav`
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     padding: 0 20px;
+  }
+
+  @media (max-width: 800px) {
+    height: 70px;
+
+    #overlay-button {
+      cursor: pointer;
+      display: block;
+      padding: 26px 11px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      user-select: none;
+      z-index: 5;
+
+      span {
+        background-color: var(--color-text);
+        border-radius: 2px;
+        display: block;
+        height: 4px;
+        opacity: 0.7;
+        position: relative;
+        transition: all 0.15s ease-in-out;
+        width: 35px;
+
+        &:before {
+          top: -10px;
+          visibility: visible;
+        }
+        &:after {
+          top: 10px;
+        }
+        &:before,
+        &:after {
+          background-color: white;
+          border-radius: 2px;
+          content: "";
+          height: 4px;
+          position: absolute;
+          transition: all 0.15s ease-in-out;
+          width: 35px;
+        }
+      }
+      &:hover span,
+      &:hover span:before,
+      &:hover span:after {
+        opacity: 1;
+      }
+    }
+
+    ul {
+      background-color: var(--color-background);
+      bottom: 0;
+      display: none;
+
+      left: 0;
+      opacity: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+    }
+
+    input[type="checkbox"]:checked ~ ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 1;
+    }
+
+    li {
+      a {
+        align-items: center;
+        /* border-bottom: 1px solid #abc; */
+        display: flex;
+        font-size: 32px;
+        height: 100%;
+        justify-content: center;
+        margin: 30px 0;
+
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
   }
 `;
 
@@ -281,7 +393,7 @@ const MainWrapper = styled.main`
     text-decoration: line-through;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 900px) {
     > section {
       padding: 50px 20px;
     }
@@ -292,7 +404,11 @@ const MainFooter = styled.footer`
   background-color: var(--color-background);
   margin-top: auto;
 
-  h3 a {
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h2 a {
     text-decoration: none;
 
     &:hover,
@@ -333,7 +449,7 @@ const MainFooter = styled.footer`
     &:last-child {
       background-color: #222;
       font-size: 0.8rem;
-      padding: 15px 360px;
+      padding: 15px;
       position: relative;
       text-align: center;
       white-space: nowrap;
@@ -384,6 +500,19 @@ const MainFooter = styled.footer`
   a:hover svg,
   a:focus svg {
     opacity: 1;
+  }
+
+  @media (min-width: 900px) {
+    > section:last-child {
+      padding: 15px 360px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    > section:first-child {
+      grid: none;
+      padding: 20px;
+    }
   }
 `;
 
