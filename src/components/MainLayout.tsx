@@ -302,7 +302,7 @@ const MainNavigation = styled.nav`
       padding: 26px 11px;
       position: absolute;
       right: 10px;
-      top: 10px;
+      top: 5px;
       user-select: none;
       z-index: 5;
 
@@ -314,7 +314,7 @@ const MainNavigation = styled.nav`
         opacity: 0.7;
         position: relative;
         transition: all 0.15s ease-in-out;
-        width: 35px;
+        width: 30px;
 
         &:before {
           top: -10px;
@@ -331,7 +331,7 @@ const MainNavigation = styled.nav`
           height: 4px;
           position: absolute;
           transition: all 0.15s ease-in-out;
-          width: 35px;
+          width: 30px;
         }
       }
       &:hover span,
