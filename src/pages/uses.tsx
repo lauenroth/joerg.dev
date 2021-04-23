@@ -47,6 +47,11 @@ const UsesPage: React.FC = () => (
           - Standing desk
         </li>
         <li>
+          <a href="https://www.amazon.de/HAVIT-Wasserdicht-Tischunterlage-extended-mousepad/dp/B01LYBDDDS/">
+            Magic Eagle XXL Mousepad
+          </a>
+        </li>
+        <li>
           <a href="https://www.samsung.com/global/galaxy/galaxy-buds-pro/">
             Galaxy Buds Pro
           </a>
