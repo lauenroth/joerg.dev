@@ -12,11 +12,14 @@ const UsesPage: React.FC = () => (
     <Wrapper>
       <h2>My setup</h2>
       <p>
-        I'm quite happy with my current setup. It's very useful in these
-        pandemic times we're currently living in.
+        I'm quite happy with my current setup :) It's not perfect but it does
+        the job.
       </p>
       <p>
-        <img src={SetupImage} />
+        <img
+          src={SetupImage}
+          alt="My setup with laptop, monitor, keyboard etc"
+        />
       </p>
       <h3>Hardware</h3>
       <ul>
