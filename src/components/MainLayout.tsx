@@ -459,7 +459,7 @@ const MainFooter = styled.footer`
         padding: 0;
       }
 
-      a {
+      li a {
         align-items: center;
         display: inline-flex;
         margin-bottom: 15px;
@@ -577,13 +577,21 @@ const Gallery = styled.div`
   height: 120px;
   overflow: auto;
   padding: 20px 0 20px 20px;
-  /* white-space: nowrap; */
   width: 100%;
+
+  > a {
+    margin-bottom: 0;
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
 
   img {
     border-radius: 6px;
     height: 120px;
     margin: 0 20px 20px 0;
+    transition: 0.25s;
   }
 `;
 
