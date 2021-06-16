@@ -193,7 +193,7 @@ const MainLayout: React.FC = ({ children }) => (
         </div>
       </section>
       <section>
-        <Link to="/imprint">Imprint</Link>
+        <Link to="/contact">Contact</Link>
         <Link to="/privacy-notice">Privacy notice</Link>
       </section>
     </MainFooter>
@@ -463,13 +463,40 @@ const MainFooter = styled.footer`
         align-items: center;
         display: inline-flex;
         margin-bottom: 15px;
+        position: relative;
+
+        &::before {
+          bottom: 6px;
+          content: "<";
+          left: 45px;
+          opacity: 0;
+          position: absolute;
+          transition: 0.25s;
+        }
+
+        &::after {
+          bottom: 6px;
+          content: ">";
+          right: -8px;
+          opacity: 0;
+          position: absolute;
+          transition: 0.25s;
+        }
 
         &:hover {
-          text-decoration: underline;
+          &::after {
+            opacity: 1;
+            right: -12px;
+          }
+          &::before {
+            left: 38px;
+            opacity: 1;
+          }
+          /* text-decoration: underline; */
         }
 
         svg {
-          margin-right: 10px;
+          margin-right: 20px;
         }
       }
     }
