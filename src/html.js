@@ -6,7 +6,7 @@ export default function HTML(props) {
     <html {...props.htmlAttributes} lang="en">
       <head>
         <title>Jörg.dev</title>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta
           name="description"
           content="Freelancing web developer based in Berlin"
