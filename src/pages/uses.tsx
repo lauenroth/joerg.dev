@@ -21,74 +21,80 @@ const UsesPage: React.FC = () => (
           alt="My setup with laptop, monitor, keyboard etc"
         />
       </p>
-      <h3>Hardware</h3>
-      <ul>
-        <li>
-          <a href="https://www.apple.com/macbook-pro-13/">
-            Macbook Pro 13" (2020)
-          </a>
-        </li>
-        <li>
-          <a href="https://www.amazon.com/Dell-PF48H-21-5-Inch-Discontinued-Manufacturer/dp/B005OHPW1Q">
-            21.5" Dell U2212HM monitor
-          </a>
-        </li>
-        <li>
-          <a href="https://www.apple.com/de/shop/product/MQ052Z/A/magic-keyboard-mit-ziffernblock-englisch-international-silber">
-            Magic Keyboard with numeric keypad
-          </a>
-        </li>
-        <li>
-          <a href="https://www.apple.com/de/shop/product/MJ2R2Z/A/magic-trackpad-2-silber">
-            Magic Trackpad 2
-          </a>
-        </li>
-        <li>
-          <a href="https://www.inwerk-bueromoebel.de/made-by-inwerk/hoehenverstellbare-schreibtische-masterlift/masterlift2/">
-            INWERK Masterlift 2
-          </a>{" "}
-          - Standing desk
-        </li>
-        <li>
-          <a href="https://www.amazon.de/HAVIT-Wasserdicht-Tischunterlage-extended-mousepad/dp/B01LYBDDDS/">
-            Magic Eagle XXL Mousepad
-          </a>
-        </li>
-        <li>
-          <a href="https://www.samsung.com/global/galaxy/galaxy-buds-pro/">
-            Galaxy Buds Pro
-          </a>
-        </li>
-        <li>
-          <a href="https://www.amazon.de/gp/product/B089VX137D/">
-            bossgo charging station
-          </a>
-        </li>
-      </ul>
+      <SetupDetails>
+        <div>
+          <h3>Hardware</h3>
+          <ul>
+            <li>
+              <a href="https://www.apple.com/macbook-pro-13/">
+                Macbook Pro 13" (2020)
+              </a>
+            </li>
+            <li>
+              <a href="https://www.amazon.com/Dell-PF48H-21-5-Inch-Discontinued-Manufacturer/dp/B005OHPW1Q">
+                21.5" Dell U2212HM monitor
+              </a>
+            </li>
+            <li>
+              <a href="https://www.apple.com/de/shop/product/MQ052Z/A/magic-keyboard-mit-ziffernblock-englisch-international-silber">
+                Magic Keyboard with numeric keypad
+              </a>
+            </li>
+            <li>
+              <a href="https://www.apple.com/de/shop/product/MJ2R2Z/A/magic-trackpad-2-silber">
+                Magic Trackpad 2
+              </a>
+            </li>
+            <li>
+              <a href="https://www.inwerk-bueromoebel.de/made-by-inwerk/hoehenverstellbare-schreibtische-masterlift/masterlift2/">
+                INWERK Masterlift 2
+              </a>{" "}
+              - Standing desk
+            </li>
+            <li>
+              <a href="https://www.amazon.de/HAVIT-Wasserdicht-Tischunterlage-extended-mousepad/dp/B01LYBDDDS/">
+                Magic Eagle XXL Mousepad
+              </a>
+            </li>
+            <li>
+              <a href="https://www.samsung.com/global/galaxy/galaxy-buds-pro/">
+                Galaxy Buds Pro
+              </a>
+            </li>
+            <li>
+              <a href="https://www.amazon.de/gp/product/B089VX137D/">
+                bossgo charging station
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      <h3>Software</h3>
-      <ul>
-        <li>
-          <a href="https://code.visualstudio.com/">Visual Studio Code</a> - Code
-          editor
-        </li>
-        <li>
-          <a href="https://brave.com/">Brave Browser</a> - Privacy browser
-        </li>
-        <li>
-          <a href="https://www.notion.so/">Notion</a> - Notes
-        </li>
-        <li>
-          <a href="https://www.tableplus.io/">TablePlus</a> - Database
-          management
-        </li>
-        <li>
-          <a href="https://iterm2.com/">iTerm2</a> - MacOS terminal
-        </li>
-        <li>
-          <a href="https://www.spotify.com/">Spotify</a> - Music streaming
-        </li>
-      </ul>
+        <div>
+          <h3>Software</h3>
+          <ul>
+            <li>
+              <a href="https://code.visualstudio.com/">Visual Studio Code</a> -
+              Code editor
+            </li>
+            <li>
+              <a href="https://brave.com/">Brave Browser</a> - Privacy browser
+            </li>
+            <li>
+              <a href="https://www.notion.so/">Notion</a> - Notes
+            </li>
+            <li>
+              <a href="https://www.tableplus.io/">TablePlus</a> - Database
+              management
+            </li>
+            <li>
+              <a href="https://iterm2.com/">iTerm2</a> - MacOS terminal
+            </li>
+            <li>
+              <a href="https://www.spotify.com/">Spotify</a> - Music streaming
+            </li>
+          </ul>
+        </div>
+      </SetupDetails>
     </Wrapper>
   </MainLayout>
 );
@@ -106,6 +112,12 @@ const Wrapper = styled.section`
   li {
     line-height: 1.5;
   }
+`;
+
+const SetupDetails = styled.div`
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto auto;
 `;
 
 export default UsesPage;
