@@ -36,6 +36,7 @@ const IndexPage: React.FC = () => {
           </p>
           <p>
             You can find more about me on my <Link to="/about">about page</Link>
+            .
           </p>
           <p>
             If you are interested in working with me, please{" "}
@@ -68,7 +69,7 @@ const Hello = styled.section`
     font-size: 1.2rem;
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: 800px) {
     grid-template-columns: auto;
     grid-column-gap: 30px;
 

@@ -20,9 +20,6 @@ const ProjectsPage: React.FC = () => (
           <a href="#">WorldcAPP</a>
         </li>
         <li>
-          <a href="#">Lab-Chop</a>
-        </li>
-        <li>
           <a href="#">Förderverein GARP</a>
         </li>
         <li>
