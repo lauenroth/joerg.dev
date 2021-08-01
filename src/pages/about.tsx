@@ -47,7 +47,7 @@ const AboutPage: React.FC = () => (
           </p>
           <p>
             Going to concerts and festivals is one of the best things to do - as
-            well as playing guitar. 🎸
+            well as playing guitar.
           </p>
         </li>
 
