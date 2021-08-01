@@ -16,7 +16,7 @@ const AboutPage: React.FC = () => (
             <span role="img" aria-label="nerd emoji">
               👨‍💻
             </span>{" "}
-            Dev
+            dev
           </h2>
           <p>
             I'm one of these &quot;devs&quot; who transform{" "}
@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => (
             <span role="img" aria-label="metal hand emoji">
               🤘
             </span>{" "}
-            Punk
+            punk
           </h2>
           <p>
             I loooove music! Music has always played an important role in my
@@ -56,7 +56,7 @@ const AboutPage: React.FC = () => (
             <span role="img" aria-label="food emoji">
               🍲
             </span>{" "}
-            Chef
+            chef
           </h2>
           <p>
             Okay, I'm probably not a great chef but I love cooking and baking.
@@ -72,7 +72,7 @@ const AboutPage: React.FC = () => (
             <span role="img" aria-label="bike emoji">
               🚴‍♂️
             </span>{" "}
-            Biker
+            biker
           </h2>
           <p>
             I try to ride my bike every day or at least several times per week.
@@ -86,7 +86,7 @@ const AboutPage: React.FC = () => (
             <span role="img" aria-label="skiing emoji">
               ⛷
             </span>{" "}
-            Alpinist
+            alpinist
           </h2>
           <p>
             Maybe I love mountains so much because we don't have them in Berlin
@@ -102,7 +102,7 @@ const AboutPage: React.FC = () => (
             <span role="img" aria-label="camera emoji">
               📷
             </span>{" "}
-            Photographer
+            photographer
           </h2>
           <p>
             Not very professionally but I love taking pictures. Especially of
