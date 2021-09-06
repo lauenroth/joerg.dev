@@ -29,16 +29,22 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    background-color: var(--color-background);
+
   }
 
   body {
-    background: conic-gradient(
+    /* background: conic-gradient(
         from 240deg at bottom right,
         var(--color-background),
         var(--color-secondary)
       )
-      fixed;
+      fixed; */
+    background-color: var(--color-background);
+    background: linear-gradient(111deg, var(--color-background), var(--color-ternary));
+    background-size: 400% 400%;
+
+    -webkit-animation: backgroundAnimation 20s ease infinite;
+    animation: backgroundAnimation 20s ease infinite;
     color: var(--color-text);
     min-height: 100vh;
     margin: 0;
@@ -62,6 +68,17 @@ const GlobalStyle = createGlobalStyle`
     &:focus {
       text-decoration: none;
     }
+  }
+
+  @-webkit-keyframes backgroundAnimation {
+    0% { background-position:0% 67%; }
+    50% { background-position:100% 34%; }
+    100% { background-position:0% 67%; }
+  }
+  @keyframes backgroundAnimation {
+    0% { background-position:0% 67%; }
+    50% { background-position:100% 34%; }
+    100% { background-position:0% 67%; }
   }
 `;
 
