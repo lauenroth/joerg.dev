@@ -33,12 +33,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    /* background: conic-gradient(
-        from 240deg at bottom right,
-        var(--color-background),
-        var(--color-secondary)
-      )
-      fixed; */
     background-color: var(--color-background);
     background: linear-gradient(111deg, var(--color-background), var(--color-ternary));
     background-size: 400% 400%;
@@ -80,24 +74,14 @@ const GlobalStyle = createGlobalStyle`
     50% { background-position:100% 34%; }
     100% { background-position:0% 67%; }
   }
+
+  @keyframes fadeIn {
+    0% { opacity: .3; top: 10px; }
+    100% { opacity: 1; top: 0; }
+  }
 `;
 
 const MainLayout: React.FC = ({ children }) => {
-  useEffect(() => {
-    console.log(
-      "%cHey there! 👋",
-      "font-size: 26px; font-family: Verdana, sans-serif; color: #f1faee; text-shadow: 2px 2px 0 #457b9d, 4px 4px #1d3557;"
-    );
-    console.log(
-      "%cGot any questions about this website?",
-      "font-size: 18px; font-family: Verdana, sans-serif; color: #f1faee; text-shadow: 2px 2px 0 #457b9d, 4px 4px #1d3557;"
-    );
-    console.log(
-      "%cFeel free to ask me anything via hi@jörg.dev",
-      "font-size: 18px; font-family: Verdana, sans-serif; color: #f1faee; text-shadow: 2px 2px 0 #457b9d, 4px 4px #1d3557;"
-    );
-  }, []);
-
   return (
     <>
       <GlobalStyle />
@@ -124,6 +108,9 @@ const MainLayout: React.FC = ({ children }) => {
         <li>
           <Link to="/cooking">cooking</Link>
         </li> */}
+          <li>
+            <Link to="/blog">blog</Link>
+          </li>
           <li>
             <Link to="/uses">uses</Link>
           </li>

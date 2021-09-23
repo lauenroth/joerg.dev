@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import MainLayout from "../components/MainLayout";
@@ -7,6 +7,21 @@ import Helmet from "react-helmet";
 
 // markup
 const IndexPage: React.FC = () => {
+  useEffect(() => {
+    console.log(
+      "%cHey there! 👋",
+      "font-size: 26px; font-family: Verdana, sans-serif; color: #f1faee; text-shadow: 2px 2px 0 #457b9d, 4px 4px #1d3557;"
+    );
+    console.log(
+      "%cGot any questions about this website?",
+      "font-size: 18px; font-family: Verdana, sans-serif; color: #f1faee; text-shadow: 2px 2px 0 #457b9d, 4px 4px #1d3557;"
+    );
+    console.log(
+      "%cFeel free to ask me anything via hi@jörg.dev",
+      "font-size: 18px; font-family: Verdana, sans-serif; color: #f1faee; text-shadow: 2px 2px 0 #457b9d, 4px 4px #1d3557;"
+    );
+  }, []);
+
   return (
     <MainLayout>
       <Helmet>
