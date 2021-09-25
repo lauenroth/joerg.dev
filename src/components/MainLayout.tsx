@@ -96,9 +96,6 @@ const MainLayout: React.FC = ({ children }) => {
         </label>
 
         <ul>
-          <li>
-            <Link to="/about">about</Link>
-          </li>
           {/* <li>
             <Link to="/projects">projects</Link>
           </li> */}
@@ -110,6 +107,9 @@ const MainLayout: React.FC = ({ children }) => {
         </li> */}
           <li>
             <Link to="/blog">blog</Link>
+          </li>
+          <li>
+            <Link to="/about">about</Link>
           </li>
           <li>
             <Link to="/uses">uses</Link>
