@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import MainLayout from "../components/MainLayout";
 
 const ContactPage: React.FC = () => (
   <MainLayout>
+    <Helmet>
+      <title>Jörg.dev | contact</title>
+    </Helmet>
     <section>
       <h1>Let's get in touch</h1>
       <p>
