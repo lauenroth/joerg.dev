@@ -105,9 +105,9 @@ const MainLayout: React.FC = ({ children }) => {
         <li>
           <Link to="/cooking">cooking</Link>
         </li> */}
-          <li>
+          {/* <li>
             <Link to="/blog">blog</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/about">about</Link>
           </li>
@@ -435,6 +435,10 @@ const MainWrapper = styled.main`
     margin: 0 auto;
     padding: 100px 60px;
     max-width: var(--max-width);
+
+    li {
+      line-height: 1.5;
+    }
   }
 
   .delete {
