@@ -26,8 +26,7 @@ const AboutPage: React.FC = () => (
           </p>
           <p>
             I love trying out new libraries and frameworks so you will find lots
-            of different technologies being used on{" "}
-            <a href="/projects">my projects page</a>.
+            of different technologies being used on my projects.
           </p>
         </li>
 
@@ -77,7 +76,7 @@ const AboutPage: React.FC = () => (
           <p>
             I try to ride my bike every day or at least several times per week.
             Recently, I got a new pedelec that's super fun to ride and increases
-            my range. Plus I don't arrive sweaty in the office ;)
+            my range. Plus I don't arrive sweaty in the office ; )
           </p>
         </li>
 
@@ -92,21 +91,24 @@ const AboutPage: React.FC = () => (
             Maybe I love mountains so much because we don't have them in Berlin
             (or in the other cities I was living). Skiing is, hands down, the
             best sport in the world. You spend the entire day outside (at a
-            season where you usually prefer being inside) in a beautiful
+            season where you usually prefer staying inside) in a beautiful
             landscape doing sport.
           </p>
         </li>
 
         <li>
           <h2>
-            <span role="img" aria-label="camera emoji">
-              📷
+            <span role="img" aria-label="teacher emoji">
+              👨‍🏫
             </span>{" "}
-            photographer
+            teacher
           </h2>
           <p>
-            Not very professionally but I love taking pictures. Especially of
-            nature and architecture.
+            Gaining and sharing knowledge are some of the key factors of our
+            society. I enjoy given talks in the companies I'm working and
+            currently prepare a computer course at the elementary school of my
+            kids to help them understanding how computers work and encourage
+            them to learn programming.
           </p>
         </li>
       </ul>

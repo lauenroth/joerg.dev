@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "gatsby";
 import styled, { css } from "styled-components";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import MainLayout from "../components/MainLayout";
 import jörgImage from "../images/jorg.webp";
 import Helmet from "react-helmet";
@@ -21,6 +22,39 @@ const IndexPage: React.FC = () => {
       "font-size: 18px; font-family: Verdana, sans-serif; color: #f1faee; text-shadow: 2px 2px 0 #457b9d, 4px 4px #1d3557;"
     );
   }, []);
+
+  const { scrollYProgress } = useViewportScroll();
+
+  const opacity = useTransform(scrollYProgress, [0, 0.15], [0.2, 1]);
+  const translateYFirst = useTransform(scrollYProgress, [0, 0.15], [300, 0]);
+  const translateY = useTransform(scrollYProgress, [0, 0.4, 1], [500, 0, 0]);
+  const translateYAufbruch = useTransform(
+    scrollYProgress,
+    [0, 0.1, 0.55],
+    [500, 500, 0]
+  );
+  const translateYMobile = useTransform(
+    scrollYProgress,
+    [0, 0.3, 1],
+    [700, 0, 0]
+  );
+  const rotateX = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    ["50deg", "0deg", "-50deg"]
+  );
+  const rotateY = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    ["38deg", "0deg", "-38deg"]
+  );
+  const rotateXLeft = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["-30deg", "120deg"]
+  );
+  const yPosAnim = useTransform(scrollYProgress, [0, 0.5, 1], [0, 100, 200]);
+  // const zRotAnim = useTransform(scrollYProgress, [0, 0.5, 1], [0, 3, 0]);
 
   return (
     <MainLayout>
@@ -50,12 +84,8 @@ const IndexPage: React.FC = () => {
             projects as well.
           </p>
           <p>
-            You can find more about me on my <Link to="/about">about page</Link>
-            .
-          </p>
-          <p>
-            If you are interested in working with me, please{" "}
-            <Link to="/contact">drop me a line</Link>.
+            You can check out some of these projects further below and find out
+            more about me on my <Link to="/about">about page</Link>.
           </p>
         </div>
       </Hello>
@@ -85,8 +115,18 @@ const IndexPage: React.FC = () => {
               <li>Design</li>
             </Tags>
           </div>
-          <aside>
-            <p className="website">
+          <motion.aside
+            style={{
+              perspective: "500px",
+              translateY: translateYFirst,
+              opacity,
+              // rotateX,
+              // rotateY,
+              // y: yPosAnim,
+              // rotateZ: zRotAnim,
+            }}
+          >
+            <div className="website">
               <div />
               <a href="https://foerderverein-garp.de/">
                 <img
@@ -94,11 +134,11 @@ const IndexPage: React.FC = () => {
                   alt="Website Förderverein GARP"
                 />
               </a>
-            </p>
+            </div>
             <p className="url">
               <a href="https://foerderverein-garp.de/">foerderverein-garp.de</a>
             </p>
-          </aside>
+          </motion.aside>
         </section>
       </ProjectSection>
       <ProjectSection isAlt>
@@ -120,18 +160,36 @@ const IndexPage: React.FC = () => {
               it was possible to use the app simultaneously by several people
               while having the data in sync.
             </p>
+            <p>
+              At the same time, it was possible to use the app without a
+              connection to the CMS - in order not to be blocked in case of any
+              CMS issues. All data is stored in local storage of the device.
+            </p>
             <Tags>
               <li>React</li>
               <li>TypeScript</li>
               <li>Styled Components</li>
               <li>Design</li>
+              <li>PWA</li>
+              <li>Offline</li>
               <li>API</li>
             </Tags>
           </div>
           <aside>
-            <p className="mobile">
+            <motion.div
+              className="mobile"
+              style={{
+                perspective: "500px",
+                translateY: translateYMobile,
+                // rotateX,
+                // rotateY,
+              }}
+            >
               <img src="/images/projects/flea-market.png" alt="Flea market" />
-            </p>
+            </motion.div>
+            {/* <p className="mobile">
+              <img src="/images/projects/flea-market.png" alt="Flea market" />
+            </p> */}
           </aside>
         </section>
       </ProjectSection>
@@ -143,13 +201,23 @@ const IndexPage: React.FC = () => {
               I had the pleasure to implement the website for one of the finest
               architects in Berlin: Perackis Architekten.
             </p>
+            <p>They needed a portfolio to showcase a subset of their work.</p>
+            <p>
+              This was the first freelancing project using CraftCMS which is
+              always a pleasure to work with.
+            </p>
             <Tags>
               <li>CraftCMS</li>
               <li>CSS / HTML</li>
             </Tags>
           </div>
-          <aside>
-            <p className="website">
+          <motion.aside
+            style={{
+              perspective: "500px",
+              translateY,
+            }}
+          >
+            <div className="website">
               <div />
               <a href="https://www.perackis.de/">
                 <img
@@ -157,11 +225,11 @@ const IndexPage: React.FC = () => {
                   alt="Perackis Architekten Website"
                 />
               </a>
-            </p>
+            </div>
             <p className="url">
               <a href="https://www.perackis.de/">perackis.de</a>
             </p>
-          </aside>
+          </motion.aside>
         </section>
       </ProjectSection>
       <ProjectSection isAlt>
@@ -185,12 +253,17 @@ const IndexPage: React.FC = () => {
               <li>Design</li>
             </Tags>
           </div>
-          <aside>
-            <p className="website">
+          <motion.aside
+            style={{
+              perspective: "500px",
+              translateY: translateYAufbruch,
+            }}
+          >
+            <div className="website">
               <div />
               <img src="/images/projects/aufbruch.png" alt="Aufbruch Website" />
-            </p>
-          </aside>
+            </div>
+          </motion.aside>
         </section>
       </ProjectSection>
       <ProjectSection>
@@ -211,11 +284,35 @@ const IndexPage: React.FC = () => {
             </Tags>
           </div>
           <aside>
-            <p className="mobile">
+            <motion.div
+              className="mobile"
+              style={{
+                perspective: "500px",
+                translateY: translateYMobile,
+                translateX: translateYFirst,
+              }}
+            >
               <div />
               <img src="/images/projects/worldcapp.png" alt="WorldcApp app" />
-            </p>
+            </motion.div>
           </aside>
+        </section>
+      </ProjectSection>
+      <ProjectSection isAlt>
+        <section>
+          <div>
+            <h2>This Website</h2>
+            <p>
+              I finally took some time to work on my own website. Also because I
+              wanted to give Gatsby a try in a real project.
+            </p>
+            <Tags>
+              <li>Gatsby</li>
+              <li>React</li>
+              <li>Styled Components</li>
+            </Tags>
+          </div>
+          <aside>...</aside>
         </section>
       </ProjectSection>
       <section>
@@ -224,21 +321,27 @@ const IndexPage: React.FC = () => {
           Currently, I am preparing a computer course for pupils at the
           Grundschule am Rüdesheimer Platz to be started later this year.
         </p>
-        <p>This course will include lectures about</p>
-        <ul>
-          <li>structure of a computer</li>
-          <li>hardware, software</li>
-          <li>the Internet</li>
-          <li>search engines</li>
-          <li>social media</li>
-          <li>opearing systems</li>
-          <li>files and folders</li>
-          <li>Word, Excel</li>
+        <p>This course will include lectures about:</p>
+        <Tags>
+          <li>Structure of a computer</li>
+          <li>Hardware, software</li>
+          <li>The Internet</li>
+          <li>Search engines</li>
+          <li>Social media</li>
+          <li>Operating systems</li>
+          <li>Files and folders</li>
+          <li>Storage media</li>
           <li>HTML, CSS, JavaScript</li>
-          <li>security/passwords</li>
-          <li>artificial intelligence</li>
-          <li>and much more :)</li>
-        </ul>
+          <li>Word, Excel, Powerpoint</li>
+          <li>Accessibility</li>
+          <li>Security / passwords</li>
+          <li>Artificial intelligence</li>
+          <li>VR / AR</li>
+          <li>Apps and programming</li>
+          <li>Scratch</li>
+          <li>LAN, Wifi, Bluetooth, NFC</li>
+          <li>Hacker, SPAM</li>
+        </Tags>
       </section>
     </MainLayout>
   );
@@ -248,6 +351,7 @@ const Hello = styled.section`
   display: grid;
   grid-template-columns: 360px auto;
   grid-column-gap: 110px;
+  min-height: 58vh;
 
   img {
     border-radius: 8px;
@@ -278,120 +382,127 @@ const Hello = styled.section`
 
 const Tags = styled.ul`
   display: flex;
+  flex-flow: wrap;
   gap: 20px;
   list-style: none;
   margin: 40px 0;
+  max-width: var(--max-width);
   padding: 0;
 
   li {
     background-color: #def;
     border-radius: 10px;
+    color: var(--color-background);
     font-size: 0.8rem;
     padding: 5px 10px;
   }
 `;
 
 const ProjectSection = styled.div<{ isAlt?: boolean }>`
-  background-color: var(--color-text);
-  color: var(--color-background);
-  min-height: 50vh;
-  padding: 100px 60px;
-
-  a {
+  ${(props) => css`
+    background-color: var(--color-text);
     color: var(--color-background);
-  }
+    min-height: 50vh;
+    padding: 100px 60px;
 
-  h2 {
-    margin: 0 auto 40px;
-    max-width: var(--max-width);
-  }
-
-  > section {
-    display: grid;
-    gap: 40px;
-    grid-template-columns: auto 40%;
-    margin: 0 auto;
-    max-width: var(--max-width);
-
-    aside {
-      text-align: center;
-    }
-  }
-
-  .mobile {
-    max-height: 550px;
-    transform: rotate3d(-50, -20, -50, -8deg);
-    transition: 0.25s;
-
-    &:hover {
-      transform: rotate3d(-0, -0, -0, 0deg);
+    a {
+      color: var(--color-background);
     }
 
-    img {
-      max-height: 550px;
-    }
-  }
-
-  .website {
-    background-color: #333;
-    border-radius: 4px;
-    box-shadow: 2px 5px 10px #999;
-    line-height: 0;
-    margin-top: 20px;
-    max-width: max(450px, 40%);
-    padding: 10px 0 0;
-    position: relative;
-    transform: rotate3d(-50, -20, -50, -8deg);
-    transition: 0.25s;
-
-    &:hover {
-      transform: rotate3d(-0, -0, -0, 0deg);
+    h2 {
+      margin: 0 auto 40px;
+      max-width: var(--max-width);
     }
 
-    div {
-      background-color: #c33;
-      border-radius: 50%;
-      height: 4px;
-      left: 5px;
-      position: absolute;
-      top: 3px;
-      width: 4px;
+    > section {
+      display: grid;
+      gap: 40px;
+      grid-template-columns: auto 40%;
+      margin: 0 auto;
+      max-width: var(--max-width);
 
-      &::after,
-      &::before {
-        background-color: #ee3;
-        border-radius: 50%;
-        content: "";
-        display: block;
-        height: 4px;
-        left: 8px;
-        padding: 0;
+      aside {
         position: relative;
-        top: 0;
+        text-align: center;
+      }
+    }
+
+    .mobile {
+      max-height: 550px;
+      /* transform: rotate3d(-50, -20, -50, -8deg); */
+      /* transform: perspective(500px) translateX(1.63px) rotateX(6deg) rotateY(-13deg); */
+      transition: 0.25s;
+
+      &:hover {
+        /* transform: rotate3d(-0, -0, -0, 0deg); */
+      }
+
+      img {
+        max-height: 550px;
+      }
+    }
+
+    .website {
+      background-color: #333;
+      border-radius: 4px;
+      box-shadow: 2px 5px 10px #999;
+      line-height: 0;
+      margin-top: 20px;
+      max-width: max(450px, 40%);
+      padding: 10px 0 0;
+      position: relative;
+      /* transform: perspective(500px) translateX(1.63px) rotateX(-6deg)
+      rotateY(-15deg); */
+      /* transition: 0.25s; */
+
+      &:hover {
+        /* transform: perspective(500px) translateX(1.63px) rotateX(0deg)
+        rotateY(0deg); */
+      }
+
+      div {
+        background-color: #c33;
+        border-radius: 50%;
+        height: 4px;
+        left: 5px;
+        position: absolute;
+        top: 3px;
         width: 4px;
+
+        &::after,
+        &::before {
+          background-color: #ee3;
+          border-radius: 50%;
+          content: "";
+          display: block;
+          height: 4px;
+          left: 8px;
+          padding: 0;
+          position: relative;
+          top: 0;
+          width: 4px;
+        }
+
+        &::after {
+          background-color: #3c3;
+          left: 16px;
+          top: -4px;
+        }
       }
 
-      &::after {
-        background-color: #3c3;
-        left: 16px;
-        top: -4px;
+      img {
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        max-width: 100%;
       }
     }
 
-    img {
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
-      max-width: 100%;
+    .url {
+      margin-top: 40px;
+      margin-bottom: 0;
     }
-  }
 
-  .url {
-    margin-top: 40px;
-    margin-bottom: 0;
-  }
-
-  ${(props) =>
-    props.isAlt &&
+    ${props.isAlt &&
     css`
       background-color: var(--color-background);
       color: var(--color-text);
@@ -409,13 +520,21 @@ const ProjectSection = styled.div<{ isAlt?: boolean }>`
       }
 
       .website {
-        transform: rotate3d(-50, -20, -50, 8deg);
+        /* transform: rotate3d(-50, -20, -50, 8deg); */
       }
 
       .mobile {
-        transform: rotate3d(-50, -20, -50, 8deg);
+        /* transform: rotate3d(-50, -20, -50, 8deg); */
       }
     `}
+
+    @media (max-width: 800px) {
+      > section {
+        grid-template-columns: auto;
+        grid-column-gap: 30px;
+      }
+    }
+  `}
 `;
 
 export default IndexPage;
