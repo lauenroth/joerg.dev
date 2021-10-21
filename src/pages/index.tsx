@@ -26,34 +26,22 @@ const IndexPage: React.FC = () => {
   const { scrollYProgress } = useViewportScroll();
 
   const opacity = useTransform(scrollYProgress, [0, 0.15], [0.2, 1]);
-  const translateYFirst = useTransform(scrollYProgress, [0, 0.15], [300, 0]);
-  const translateY = useTransform(scrollYProgress, [0, 0.4, 1], [500, 0, 0]);
-  const translateYAufbruch = useTransform(
-    scrollYProgress,
-    [0, 0.1, 0.55],
-    [500, 500, 0]
-  );
-  const translateYMobile = useTransform(
-    scrollYProgress,
-    [0, 0.3, 1],
-    [700, 0, 0]
-  );
-  const rotateX = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    ["50deg", "0deg", "-50deg"]
-  );
-  const rotateY = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    ["38deg", "0deg", "-38deg"]
-  );
-  const rotateXLeft = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["-30deg", "120deg"]
-  );
-  const yPosAnim = useTransform(scrollYProgress, [0, 0.5, 1], [0, 100, 200]);
+  // const rotateX = useTransform(
+  //   scrollYProgress,
+  //   [0, 0.5, 1],
+  //   ["50deg", "0deg", "-50deg"]
+  // );
+  // const rotateY = useTransform(
+  //   scrollYProgress,
+  //   [0, 0.5, 1],
+  //   ["38deg", "0deg", "-38deg"]
+  // );
+  // const rotateXLeft = useTransform(
+  //   scrollYProgress,
+  //   [0, 1],
+  //   ["-30deg", "120deg"]
+  // );
+  // const yPosAnim = useTransform(scrollYProgress, [0, 0.5, 1], [0, 100, 200]);
   // const zRotAnim = useTransform(scrollYProgress, [0, 0.5, 1], [0, 3, 0]);
 
   return (
@@ -118,12 +106,8 @@ const IndexPage: React.FC = () => {
           <motion.aside
             style={{
               perspective: "500px",
-              translateY: translateYFirst,
+              translateY: useTransform(scrollYProgress, [0, 0.15], [300, 0]),
               opacity,
-              // rotateX,
-              // rotateY,
-              // y: yPosAnim,
-              // rotateZ: zRotAnim,
             }}
           >
             <div className="website">
@@ -180,16 +164,16 @@ const IndexPage: React.FC = () => {
               className="mobile"
               style={{
                 perspective: "500px",
-                translateY: translateYMobile,
-                // rotateX,
-                // rotateY,
+                translateY: useTransform(
+                  scrollYProgress,
+                  [0, 0.3, 1],
+                  [700, 0, 0]
+                ),
+                opacity,
               }}
             >
               <img src="/images/projects/flea-market.png" alt="Flea market" />
             </motion.div>
-            {/* <p className="mobile">
-              <img src="/images/projects/flea-market.png" alt="Flea market" />
-            </p> */}
           </aside>
         </section>
       </ProjectSection>
@@ -214,7 +198,12 @@ const IndexPage: React.FC = () => {
           <motion.aside
             style={{
               perspective: "500px",
-              translateY,
+              translateY: useTransform(
+                scrollYProgress,
+                [0, 0.25, 0.5, 1],
+                [500, 500, 0, 0]
+              ),
+              opacity,
             }}
           >
             <div className="website">
@@ -256,7 +245,12 @@ const IndexPage: React.FC = () => {
           <motion.aside
             style={{
               perspective: "500px",
-              translateY: translateYAufbruch,
+              translateY: useTransform(
+                scrollYProgress,
+                [0, 0.4, 0.65],
+                [500, 500, 0]
+              ),
+              opacity,
             }}
           >
             <div className="website">
@@ -276,6 +270,11 @@ const IndexPage: React.FC = () => {
               <abbr title="European External Action Service">EEAS</abbr> where
               all colleagues were able to bet on the results of each match.
             </p>
+            <p>
+              The initial version is currently broken but I am trying to migrate
+              it to the latest Meteor version using React (used to be with
+              Blaze) and styled components.
+            </p>
             <Tags>
               <li>Meteor</li>
               <li>React</li>
@@ -288,8 +287,12 @@ const IndexPage: React.FC = () => {
               className="mobile"
               style={{
                 perspective: "500px",
-                translateY: translateYMobile,
-                translateX: translateYFirst,
+                translateY: useTransform(
+                  scrollYProgress,
+                  [0, 0.6, 0.8, 1],
+                  [500, 500, 0, 0]
+                ),
+                opacity,
               }}
             >
               <div />
@@ -298,7 +301,7 @@ const IndexPage: React.FC = () => {
           </aside>
         </section>
       </ProjectSection>
-      <ProjectSection isAlt>
+      {/* <ProjectSection isAlt>
         <section>
           <div>
             <h2>This Website</h2>
@@ -314,7 +317,7 @@ const IndexPage: React.FC = () => {
           </div>
           <aside>...</aside>
         </section>
-      </ProjectSection>
+      </ProjectSection> */}
       <section>
         <h2>Computer AG</h2>
         <p>
