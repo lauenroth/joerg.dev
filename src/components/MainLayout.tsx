@@ -55,6 +55,26 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  button, .btn {
+    background-color: var(--color-highlight);
+    border: 0;
+    border-radius: 10px;
+    color: var(--color-text);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    opacity: .9;
+    padding: 15px;
+    text-decoration: none;
+    text-align: center;
+    transition: .25s;
+
+    &:hover,
+&:focus {
+  opacity: 1;
+}
+  }
+
   @-webkit-keyframes backgroundAnimation {
     0% { background-position:0% 67%; }
     50% { background-position:100% 34%; }
