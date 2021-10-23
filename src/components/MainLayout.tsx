@@ -3,17 +3,8 @@ import styled, { createGlobalStyle } from "styled-components";
 import "@fontsource/comfortaa";
 import "@fontsource/fira-code";
 import { Link } from "gatsby";
-// import AltesMuseum from "../images/altes_museum.jpeg";
-// import Bellevue from "../images/bellevue.jpeg";
-// import Cinquantenaire from "../images/cinquantenaire.jpeg";
-// import Flachau from "../images/flachau.jpeg";
-// import Ghent from "../images/ghent.jpeg";
-// import HumboldtForum from "../images/humboldt_forum.jpeg";
-// import Kellenhusen from "../images/kellenhusen.jpeg";
-// import Roma from "../images/roma.jpeg";
-// import Zoo from "../images/zoo.jpeg";
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   :root {
     --color-background: #1d3557;
     --color-text: #f1faee;
