@@ -69,10 +69,15 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
     transition: .25s;
 
+    &:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+    }
+
     &:hover,
-&:focus {
-  opacity: 1;
-}
+    &:focus {
+      opacity: 1;
+    }
   }
 
   @-webkit-keyframes backgroundAnimation {
