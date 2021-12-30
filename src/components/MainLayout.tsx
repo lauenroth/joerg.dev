@@ -130,6 +130,9 @@ const MainLayout: React.FC = ({ children }) => {
           <li>
             <Link to="/uses">uses</Link>
           </li>
+          <li>
+            <a href="https://computer-ag.netlify.app/">Computer AG</a>
+          </li>
         </ul>
       </MainNavigation>
       <MainWrapper>{children}</MainWrapper>
