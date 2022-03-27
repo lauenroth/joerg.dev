@@ -131,7 +131,7 @@ const MainLayout: React.FC = ({ children }) => {
             <Link to="/uses">uses</Link>
           </li>
           <li>
-            <a href="https://computer-ag.netlify.app/">Computer AG</a>
+            <a href="https://computer-ag.com/">Computer AG</a>
           </li>
         </ul>
       </MainNavigation>
